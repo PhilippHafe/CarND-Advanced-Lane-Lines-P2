@@ -140,7 +140,7 @@ Here I'll talk about the approach I took, what techniques I used, what worked an
 I faced an issue with detecting lane lines in seconds 20-25 of the project video since the street surface is very light and the yellow line to the left side is not clearly detectable (compared to the other parts of the video). The detected lane line jumped to the roadway edge of the concrete barrier. In this time interval, the gradient images are not really helpful, but the S color channel is. However, the lower threshold value for S thresholding needs to be adapted. In my pipeline it is now 120, and this setting works fine.
 
 The pipeline is likely to fail on difficult lighting conditions, e.g. through bridges and tunnels or very light street surface, since the parameters for creating the binary are fixed values. You could account for that by preprocessing the image and determining an overall brightness that is the input for a function to adopt the thresholds.
-Also, my pipeline has difficulties if lane markings disappear for some reason, since it is not performing any moving average of previously detected lanes. This could be implemented in order to make the pipeline more robust.
+Also, my pipeline has difficulties if lane markings disappear for some reason, since it is not performing any moving average . of previously detected lanes. This could be implemented in order to make the pipeline more robust.
 
 I would like to improve the following things:
 * Implement a line class 
